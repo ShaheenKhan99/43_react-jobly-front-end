@@ -17,10 +17,10 @@ export const  TOKEN_STORAGE_ID = "jobly-token";
  * - infoLoaded: has user data been pulled from API?
  *  (this manages spinner for "loading...")
  * 
- * - currentUser: user obj from API. This becomes the canonical way to tell if someone is logged in. This is passed around via cotext throughout the app.
+ * - currentUser: user obj from API. This becomes the canonical way to tell if someone is logged in. This is passed around via context throughout the app.
  * 
  * -token: for logged in users, this is their authentication JWT. 
- * Is required to be set for most API calls. This is iitially read from localStorage and synced to there via the useLocalStorage hook.
+ * Is required to be set for most API calls. This is initially read from localStorage and synced to there via the useLocalStorage hook.
  * 
  * App -> Routes
 */
@@ -68,6 +68,7 @@ function App() {
       }
       setInfoLoaded(true);
     }
+    
     // set infoLoaded to false while async getCurrentuser runs; once the data is fetched or even if an error happens, this will be set back to false to control the spinner.
 
     setInfoLoaded(false);
@@ -78,7 +79,7 @@ function App() {
 
   /** Handles site-wide signup
    * 
-   * Automatically logs then in (set token) upon signup.
+   * Automatically logs them in (set token) upon signup.
    * 
    * Make sure to await this function and check its return value.
    */

@@ -31,10 +31,10 @@ function useTimedMessage(timeInMsec=3000) {
 
         setTimeout(function removeMessage() {
 
-        setActive(false);
+            setActive(false);
 
-        messageShownRef.current = false;
-        }, timeInMsec);
+            messageShownRef.current = false;
+          }, timeInMsec);
       }
     }, [active, timeInMsec]
   );

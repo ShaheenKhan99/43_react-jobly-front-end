@@ -42,10 +42,14 @@ function JobCard({ id, title, salary, equity, companyName }) {
                 {equity !== undefined && 
                 <div>Equity: {equity}</div>}
 
-                <div className="d-grid gap-2 d-md-flex justify-content-md-end">
-                  <button className="btn btn-danger font-weight-bold text-uppercase me-md-2" onClick={handleApply} disable={applied}>
-                  {applied ? "Applied" : "Apply"}
-                  </button>
+                <div className="d-grid gap-2 d-md-flex  justify-content-md-end">
+
+                  {applied ? 
+                    <p className="text-primary font-weight-bold text-uppercase">Application submitted</p> 
+                    :
+                    <button className="btn btn-danger font-weight-bold text-uppercase me-md-2" onClick={handleApply} disable={applied}>Apply
+                    </button>}
+                
                 </div>
             </div>
         </div>

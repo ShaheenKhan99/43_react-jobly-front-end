@@ -45,7 +45,8 @@ function CompanyDetail() {
       </section>
       <section>
         <h5 className="mt-5 mb-3 text-center">Current Job Openings</h5>
-        <JobCardList jobs={company.jobs} />
+            {company.jobs ? <JobCardList jobs={company.jobs} /> : 
+              <p>No jobs here!</p>}         
       </section>
 
     </div>
